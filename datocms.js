@@ -1,7 +1,6 @@
 import { GraphQLClient } from "graphql-request"
 
 export function request({ query, variables, preview }) {
-
   const endpoint = preview
     ? `https://graphql.datocms.com/preview`
     : `https://graphql.datocms.com/`;

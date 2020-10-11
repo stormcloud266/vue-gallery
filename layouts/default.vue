@@ -12,18 +12,22 @@ export default {
   components: {
     SiteHeader
   },
-  head() {
-    return {
-      title: 'Home',
-      meta: [
-        {
-          hid: 'description',
-          name: 'description',
-          contnet: 'This is the description.'
-        }
-      ]
-    }
-  }
+  // head() {
+  //   return {
+  //     meta: [
+  //       {
+  //         hid: 'description',
+  //         name: 'description',
+  //         content: 'This is the description.'
+  //       },
+  //       {
+  //         hid: 'viewport',
+  //         name: 'viewport',
+  //         content: 'width=device-width, initial-scale=1.0'
+  //       }
+  //     ]
+  //   }
+  // }
 }
 </script>
 
@@ -62,5 +66,7 @@ a {
   max-width: 120rem;
   margin-left: auto;
   margin-right: auto;
+  padding-left: 1.4rem;
+  padding-right: 1.4rem;
 }
 </style>

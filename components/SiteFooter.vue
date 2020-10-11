@@ -33,6 +33,8 @@ li {
 }
 a {
   color: white;
+  text-transform: uppercase;
   letter-spacing: 2px;
+  font-size: 1.5rem;
 }
 </style>

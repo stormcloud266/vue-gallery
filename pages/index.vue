@@ -140,11 +140,12 @@ export default {
   position: absolute !important;
   z-index: 0;
   height: 100%;
-
 }
 
 .hero__image img {
   object-fit: cover;
+  height: 100%;
+  width: 100%;
   object-position: center;
   opacity: .6;
   pointer-events: none;
@@ -176,7 +177,7 @@ h1 {
   color: white;
   text-transform: uppercase;
   letter-spacing: 4px;
-  margin-bottom: 2.4rem;
+  margin-bottom: 1.8rem;
 }
 @media screen and (max-width: 600px) {
   .hero {

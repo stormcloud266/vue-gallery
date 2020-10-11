@@ -1,8 +1,11 @@
 <template>
 
   <div class="meet" id="meet">
+
+    <div  class="meet__image-container">
+      <datocms-image :data="image" class="meet__image"/>
+    </div>
   
-    <datocms-image :data="image" class="meet__image"/>
     
     <div class="meet__text">
       <h2>{{ title }}</h2>
@@ -31,11 +34,24 @@ export default {
   padding: 14rem 0;
   position: relative;
   align-items: center;
-  
 }
 
-.meet__image {
+.meet__image-container {
   flex: 1;
+  position: relative;
+  margin-left: 1.4rem;
+}
+
+.meet__image-container::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 99%;
+  border: 1px solid #b3b0b0;
+  position: absolute;
+  top: -1.4rem;
+  left: -1.4rem;
+  border-radius: 2px;
 }
 
 .meet__image img {

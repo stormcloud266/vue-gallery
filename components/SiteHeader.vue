@@ -44,8 +44,12 @@ a {
   font-size: 1.5rem;
 }
 
-.logo {
-  font-weight: 700;
-  text-transform: uppercase;
+@media screen and (max-width: 600px) {
+  li {
+    margin: 0 1rem 0 0;
+  }
+  li:last-child {
+    margin:0;
+  }
 }
 </style>

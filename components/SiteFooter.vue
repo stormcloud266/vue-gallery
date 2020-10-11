@@ -39,4 +39,12 @@ a {
   letter-spacing: 2px;
   font-size: 1.5rem;
 }
+@media screen and (max-width: 600px) {
+  li {
+    margin: 0 1rem 0 0;
+  }
+  li:last-child {
+    margin:0;
+  }
+}
 </style>

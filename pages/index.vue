@@ -138,6 +138,7 @@ export default {
   position: absolute !important;
   z-index: 0;
   height: 100%;
+  width: 100%;
 }
 
 .hero__image img {
@@ -180,6 +181,9 @@ h1 {
 @media screen and (max-width: 600px) {
   .hero {
     height: 48rem;
+  }
+  h1 {
+    font-size: 2.8rem;
   }
 }
 </style>

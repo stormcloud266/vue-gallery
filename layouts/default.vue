@@ -56,6 +56,8 @@ a {
   color: #717070;
   margin-bottom: 1rem;
   display: inline-block;
+  letter-spacing: 2px;
+
 }
 
 .accent-text::before,
@@ -74,7 +76,7 @@ a {
 }
 
 .accent-text::after {
-  top: -1.2rem;
+  top: -1.4rem;
   right: -100%; 
   transform: translateX(1rem);
 

@@ -8,7 +8,7 @@ export function request({ query, variables, preview }) {
 
   const client = new GraphQLClient(endpoint, {
     headers: {
-      authorization: `${process.env.NUXT_ENV_CMS_DATOCMS_API_TOKEN}`
+      authorization: `Bearer ${process.env.NUXT_ENV_CMS_DATOCMS_API_TOKEN}`
     }
   });
   return client.request(query, variables);

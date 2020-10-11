@@ -111,6 +111,18 @@ export default {
     error: null,
     loading: true,
   }),
+  head() {
+    return {
+      title: 'Natural Photography | A Vue Website',
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: 'Natural Photography | A Vue Website'
+        }
+      ]
+    }
+  }
 }
 </script>
 

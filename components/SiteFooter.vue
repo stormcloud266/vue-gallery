@@ -1,51 +1,38 @@
 <template>
-  <header class="wrapper">
-    <nav>
+  <footer>
+    <nav class="wrapper">
       <ul>
         <li><a href="#about">About</a></li>
         <li><a href="#gallery">Gallery</a></li>
         <li><a href="#meet">Meet Me</a></li>
       </ul>
     </nav>
-  </header>
+  </footer>
 </template>
 
 <script>
 export default {
-
+  name: "SiteFooter"
 }
 </script>
 
 <style scoped>
-header {
-  position: absolute;
-  left: 0; right: 0; top: 0;
-  color: white;
-  padding-top: 2rem;
-  padding-bottom: 2rem;
-  z-index: 999;
+footer {
+  background-color: #252427;
+  padding: 1rem 0;
 }
 
 ul {
   display: flex;
   justify-content: center;
-  width: 100%;
+  text-align: center;
 }
-
 li {
-  list-style: none;
   margin: 0 2rem;
+  list-style: none;
 }
-
 a {
   color: white;
-  text-transform: uppercase;
   letter-spacing: 2px;
-  font-size: 1.5rem;
-}
-
-.logo {
-  font-weight: 700;
-  text-transform: uppercase;
 }
 </style>

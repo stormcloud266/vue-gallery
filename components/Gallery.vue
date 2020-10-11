@@ -1,7 +1,6 @@
 <template>
-  <div class="gallery">
+  <div class="gallery" id="gallery">
     <datocms-image v-for="image in gallery" v-bind:key="image.responsiveImage.src" :data="image.responsiveImage" />
-    gallery
   </div>
 </template>
 
@@ -46,7 +45,6 @@ export default {
 
 @media screen and (max-width: 979px) {
   .gallery {
-    /* display: none; */
     grid-template-columns: repeat(2, 1fr);
   }
   .gallery > div:nth-child(4) {

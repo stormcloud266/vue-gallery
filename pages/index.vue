@@ -1,32 +1,31 @@
 <template>
   <div>
-    <div class="hero"></div>
+
+    <div class="hero">
+      <datocms-image v-if="data" class="hero__image" :data="data.homepage.coverImage.responsiveImage" />
+      <div class="wrapper hero__text">
+        <h1 v-if="data">{{ data.homepage.title }}</h1>
+        <a href="#gallery" class="btn">View Gallery</a>
+      </div>
+    </div>
+
     <div v-if="data" class="wrapper">
-      <!-- <pre>{{data}}</pre> -->
-      <h1>{{ data.homepage.title }}</h1>
+
+      <Intro v-bind:body="data.homepage.intro" id="about"/>
       
-      <Gallery v-bind:gallery="data.homepage.gallery" />
-      <!-- <div class="loading" v-if="loading">
-        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-rotate-clockwise-2" width="28" height="28" viewBox="0 0 24 24" stroke-width="1.5" stroke="#1d1a50" fill="none" stroke-linecap="round" stroke-linejoin="round">
-          <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-          <path d="M9 4.55a8 8 0 0 1 6 14.9m0 -4.45v5h5" />
-          <line x1="5.63" y1="7.16" x2="5.63" y2="7.17" />
-          <line x1="4.06" y1="11" x2="4.06" y2="11.01" />
-          <line x1="4.63" y1="15.1" x2="4.63" y2="15.11" />
-          <line x1="7.16" y1="18.37" x2="7.16" y2="18.38" />
-          <line x1="11" y1="19.94" x2="11" y2="19.95" />
-        </svg>
-      </div> -->
-      <!-- <div v-else-if="error">Something bad happened</div> -->
-      <!-- <div v-else>
-        <h1>{{ data.homepage.title }}</h1>
-        <div v-html="data.homepage.intro" />
-        <div class="img">
-          <datocms-image :data="data.homepage.profileImage.responsiveImage" />
-        </div>
-      </div> -->
+      <Gallery v-bind:gallery="data.homepage.gallery" id="gallery"/>
+
+      <Meet
+        v-if="data"
+        v-bind:title="data.homepage.aboutTitle" 
+        v-bind:body="data.homepage.aboutBody" 
+        v-bind:image="data.homepage.profileImage.responsiveImage"
+      />
      
     </div>
+
+    
+
   </div>
 </template>
 
@@ -34,13 +33,30 @@
 import { request } from "../datocms"
 import { Image } from "vue-datocms"
 import Gallery from "../components/Gallery"
+import Intro from "../components/Intro"
+import Meet from "../components/Meet"
 
 const HOMEPAGE_QUERY = `query MyQuery {
   homepage {
     title
     intro(markdown: true)
+    aboutTitle
+    aboutBody(markdown: true)
     profileImage {
       responsiveImage(imgixParams: {maxW: 700}) {
+        srcSet
+        webpSrcSet
+        sizes
+        src
+        width
+        aspectRatio
+        alt
+        title
+        base64
+      }
+    }
+    coverImage {
+      responsiveImage {
         srcSet
         webpSrcSet
         sizes
@@ -74,7 +90,9 @@ export default {
   name: "Home",
   components: {
     "datocms-image": Image,
-    Gallery
+    Gallery,
+    Intro,
+    Meet
   },
   
   async mounted() {
@@ -107,6 +125,62 @@ export default {
 @keyframes spin {
   0% {
     transform: rotate(-360deg);
+  }
+}
+
+.hero {
+  height: 56rem;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  background-color: #252427;
+}
+
+.hero__image {
+  position: absolute !important;
+  z-index: 0;
+  height: 100%;
+
+}
+
+.hero__image img {
+  object-fit: cover;
+  object-position: center;
+  opacity: .6;
+  pointer-events: none;
+}
+
+.hero__text {
+  position: relative;
+  z-index: 2;
+  margin-bottom: 4rem;
+}
+
+.btn {
+  color: #ffffff;
+  border: 1.5px solid #ffffff;
+  padding: 1rem 2.4rem;
+  text-transform: uppercase;
+  display: inline-block;
+  letter-spacing: 2px;
+  transition: all .2s;
+}
+
+.btn:hover {
+  background-color: #ffffff;
+  color: #49484c;
+}
+
+h1 {
+  font-size: 3.6rem;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  margin-bottom: 2.4rem;
+}
+@media screen and (max-width: 600px) {
+  .hero {
+    height: 48rem;
   }
 }
 </style>

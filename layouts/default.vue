@@ -2,46 +2,24 @@
   <div>
     <SiteHeader />
     <Nuxt />
+    <SiteFooter />
   </div>
 </template>
 
 <script>
 import SiteHeader from '@/components/SiteHeader'
+import SiteFooter from '@/components/SiteFooter'
 
 export default {
   components: {
-    SiteHeader
-  },
-  // head() {
-  //   return {
-  //     meta: [
-  //       {
-  //         hid: 'description',
-  //         name: 'description',
-  //         content: 'This is the description.'
-  //       },
-  //       {
-  //         hid: 'viewport',
-  //         name: 'viewport',
-  //         content: 'width=device-width, initial-scale=1.0'
-  //       }
-  //     ]
-  //   }
-  // }
+    SiteHeader,
+    SiteFooter
+  }
 }
 </script>
 
 <style>
 html {
-  font-family:
-    'Source Sans Pro',
-    -apple-system,
-    BlinkMacSystemFont,
-    'Segoe UI',
-    Roboto,
-    'Helvetica Neue',
-    Arial,
-    sans-serif;
   font-size: 62.5%;
   box-sizing: border-box;
 }
@@ -55,8 +33,10 @@ html {
 }
 
 body {
-  font-size: 1.6rem;
-  line-height: 1.5;
+  font-size: 1.7rem;
+  line-height: 1.7;
+  color: #49484c;
+  font-family: 'Raleway', sans-serif;
 }
 a {
   text-decoration: none;
@@ -68,5 +48,35 @@ a {
   margin-right: auto;
   padding-left: 1.4rem;
   padding-right: 1.4rem;
+}
+
+.accent-text {
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  color: #717070;
+  margin-bottom: 1rem;
+  display: inline-block;
+}
+
+.accent-text::before,
+.accent-text::after {
+  content: "";
+  display: block;
+  width: 4rem;
+  height: 1px;
+  background-color: #ababab;
+  position: relative;
+}
+.accent-text::before {
+  top: 1.2rem;
+  left: -1rem; 
+  transform: translateX(-100%);
+}
+
+.accent-text::after {
+  top: -1.2rem;
+  right: -100%; 
+  transform: translateX(1rem);
+
 }
 </style>

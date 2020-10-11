@@ -27,10 +27,12 @@ ul {
   justify-content: center;
   text-align: center;
 }
+
 li {
   margin: 0 2rem;
   list-style: none;
 }
+
 a {
   color: white;
   text-transform: uppercase;

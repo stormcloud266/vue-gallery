@@ -38,9 +38,11 @@ body {
   color: #49484c;
   font-family: 'Raleway', sans-serif;
 }
+
 a {
   text-decoration: none;
 }
+
 .wrapper {
   width: 100%;
   max-width: 120rem;
@@ -69,6 +71,7 @@ a {
   background-color: #ababab;
   position: relative;
 }
+
 .accent-text::before {
   top: 1.2rem;
   left: -1rem; 
@@ -79,6 +82,5 @@ a {
   top: -1.4rem;
   right: -100%; 
   transform: translateX(1rem);
-
 }
 </style>

@@ -23,18 +23,14 @@ export default {
   grid-auto-rows: 300px;
   gap: 1rem;
 }
+
 .gallery img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-.gallery > div:nth-child(1) {
-  grid-column: span 1;
-}
-
 .gallery > div:nth-child(2) {
-  grid-column: span 1;
   grid-row: span 2;
 }
 
@@ -47,6 +43,7 @@ export default {
   .gallery {
     grid-template-columns: repeat(2, 1fr);
   }
+  
   .gallery > div:nth-child(4) {
     grid-row: 2 / 3;
   }

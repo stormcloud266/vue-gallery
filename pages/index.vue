@@ -94,7 +94,6 @@ export default {
     Intro,
     Meet
   },
-  
   async mounted() {
     try {
       this.data = await request({
@@ -127,19 +126,6 @@ export default {
 </script>
 
 <style>
-.img {
-  max-width: 700px;
-}
-.loading svg {
-  animation: 1.5s spin linear infinite;
-}
-
-@keyframes spin {
-  0% {
-    transform: rotate(-360deg);
-  }
-}
-
 .hero {
   height: 56rem;
   position: relative;

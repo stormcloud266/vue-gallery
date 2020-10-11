@@ -15,7 +15,7 @@ A one-page, photography portfolio website built with Nuxt.js featuring lazy-load
 
 My main goal with this project was to gain some experience working with Vue. I used Nuxt to generate a static site and Vercel for hosting. 
 
-I wanted to connect the site to a headless cms, and I decided on DatoCMS because of their great image API. The data is fetched from the cms using GraphQL.
+I wanted to connect the site to a headless cms, and I decided on DatoCMS because of their great image API. The data is fetched asynchronously from the cms using GraphQL.
 
 ## Project Details
 * front end: [Nuxt.js](https://nuxtjs.org/)

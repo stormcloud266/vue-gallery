@@ -1,18 +1,13 @@
 <template>
-
   <div class="meet" id="meet">
-
     <div  class="meet__image-container">
       <datocms-image :data="image" class="meet__image"/>
     </div>
-  
-    
     <div class="meet__text">
       <h2>{{ title }}</h2>
       <div v-html="body" />
     </div>
   </div>
-  
 </template>
 
 <script>
